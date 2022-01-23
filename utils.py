@@ -35,7 +35,7 @@ def num_to_str(num):
         2.500 -> '2.5'
         3. -> '3'
     """
-    return "{0:0.02f}".format(num).rstrip("0").rstrip(".")
+    return f"{num:0.02f}".rstrip("0").rstrip(".")
 
 
 def list_to_str(lst):
@@ -58,7 +58,7 @@ def list_to_str(lst):
         str_ = " and ".join(lst)
     elif len(lst) > 2:
         str_ = ", ".join(lst[:-1])
-        str_ += ", and {0}".format(lst[-1])
+        str_ += f", and {lst[-1]}"
     else:
         raise ValueError("List of length 0 provided.")
     return str_

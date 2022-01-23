@@ -1,0 +1,20 @@
+{
+    "TaskName": "TaskName",
+    "nb_runs": "nb_runs",
+    "suffix": "suffix",
+    "PulseSequenceType": "PulseSequenceType",
+    "ScanningSequence": "ScanningSequence",
+    "SequenceVariant": "SequenceVariant",
+    "nb_slices": "nb_slices",
+    "so_st": "so_st",
+    "RepetitionTime": "RepetitionTime",
+    "echo_time": "echo_time",
+    "FlipAngle": "FlipAngle",
+    "fov": "fov",
+    "mat_siz": "mat_siz",
+    "vox_siz": "vox_siz",
+    "mb_st": "mb_st",
+    "pr_st": "pr_st",
+    "length": "length",
+    "nb_vol": "nb_vol"
+}

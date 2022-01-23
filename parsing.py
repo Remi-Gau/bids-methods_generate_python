@@ -6,9 +6,9 @@ from pathlib import Path
 import nibabel as nib
 from num2words import num2words
 
+from . import parameters
 from .. import __version__
 from ..utils import collect_associated_files
-from . import parameters
 
 logging.basicConfig()
 LOGGER = logging.getLogger("pybids.reports.parsing")
@@ -43,9 +43,9 @@ def func_info(layout, files, config):
     all_runs = sorted(list(set([f.get_entities().get("run", 1) for f in files])))
     n_runs = len(all_runs)
     if n_runs == 1:
-        run_str = "{0} run".format(num2words(n_runs).title())
+        run_str = f"{num2words(n_runs).title()} run"
     else:
-        run_str = "{0} runs".format(num2words(n_runs).title())
+        run_str = f"{num2words(n_runs).title()} runs"
     dur_str = parameters.describe_duration(files)
 
     # Parameters
@@ -113,9 +113,9 @@ def anat_info(layout, files, config):
     all_runs = sorted(list(set([f.get_entities().get("run", 1) for f in files])))
     n_runs = len(all_runs)
     if n_runs == 1:
-        run_str = "{0} run".format(num2words(n_runs).title())
+        run_str = f"{num2words(n_runs).title()} run"
     else:
-        run_str = "{0} runs".format(num2words(n_runs).title())
+        run_str = f"{num2words(n_runs).title()} runs"
     scan_type = first_file.get_entities()["suffix"].replace("w", "-weighted")
 
     # Parameters
@@ -179,9 +179,9 @@ def dwi_info(layout, files, config):
     all_runs = sorted(list(set([f.get_entities().get("run", 1) for f in files])))
     n_runs = len(all_runs)
     if n_runs == 1:
-        run_str = "{0} run".format(num2words(n_runs).title())
+        run_str = f"{num2words(n_runs).title()} run"
     else:
-        run_str = "{0} runs".format(num2words(n_runs).title())
+        run_str = f"{num2words(n_runs).title()} runs"
 
     # Parameters
     tr_str = parameters.describe_repetition_time(metadata)
@@ -268,15 +268,7 @@ def fmap_info(layout, files, config):
 
     for_str = parameters.describe_intendedfor_targets(metadata, layout)
 
-    desc = (
-        "A {variants} {seqs} field map ({parameters_str}) was "
-        "acquired{for_str}.".format(
-            variants=variants,
-            seqs=seqs,
-            for_str=for_str,
-            parameters_str=parameters_str,
-        )
-    )
+    desc = f"A {variants} {seqs} field map ({parameters_str}) was acquired{for_str}."
     return desc
 
 
@@ -322,7 +314,7 @@ def final_paragraph(metadata):
     if "ConversionSoftware" in metadata.keys():
         soft = metadata["ConversionSoftware"]
         vers = metadata["ConversionSoftwareVersion"]
-        software_str = " using {soft} ({conv_vers})".format(soft=soft, conv_vers=vers)
+        software_str = f" using {soft} ({vers})"
     else:
         software_str = ""
     desc = (
