@@ -1,0 +1,9 @@
+black
+chevron
+jupyterlab
+nb_black
+pre-commit
+pybids==0.14.0
+pytest
+rich
+ruamel.yaml
