@@ -1,4 +1,9 @@
-{{nb_runs}} run of {{> mri_sequence_description }} diffusion-weighted-imaging
-({{suffix}}) data were collected ({{nb_slices}} slices ; repetition time,
-TR= {{RepetitionTime}} s; echo time, TE= {{echo_time}} ms; flip angle,
-FA= {{FlipAngle}} deg; {{> image_size}} ; b-values of XXX acquired; XXX diffusion directions; multiband factor= {{mb_str}} ).
+{{> institution}}
+
+{{> mri_scanner_info}}
+
+{{nb_runs}} run of {{> mri_sequence_description}} diffusion-weighted-imaging
+({{suffix}}) data were collected ({{nb_slices}} slices ; {{> common_mri_parameters}}
+echo time, TE= {{echo_time}} ms;
+{{> image_size}} ; b-values of XXX acquired; XXX diffusion directions;
+multiband factor= {{mb_str}} ).

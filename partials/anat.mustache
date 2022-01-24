@@ -1,3 +1,7 @@
-{{> mri_sequence_description }} {{suffix}} structural MRI data
-were collected ({{nb_slices}} slices; repetition time, TR= {{RepetitionTime}} s;
-echo time, TE= {{echo_time}} ms; flip angle, FA= {{FlipAngle}} deg; {{> image_size}}.
+{{> institution}}
+
+{{> mri_scanner_info}}
+
+{{> mri_sequence_description}} {{suffix}} structural MRI data
+were collected ({{nb_slices}} slices; repetition time, {{> common_mri_parameters}}
+echo time, TE= {{echo_time}} ms; flip angle, {{> image_size}}.

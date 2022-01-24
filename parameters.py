@@ -32,7 +32,7 @@ def describe_repetition_time(metadata: dict):
     """Generate description of repetition time from metadata."""
     tr = metadata["RepetitionTime"] * 1000
     tr = num_to_str(tr)
-    return f"repetition time, TR={tr}ms"
+    return tr
 
 
 def describe_func_duration(n_vols: int, tr) -> str:
@@ -160,11 +160,6 @@ def describe_inplane_accel(metadata: dict) -> str:
         if metadata.get("ParallelReductionFactorInPlane", 1) > 1
         else ""
     )
-
-
-def describe_flip_angle(metadata: dict) -> str:
-    """Generate description of flip angle."""
-    return f"flip angle, FA={metadata.get('FlipAngle', 'UNKNOWN')}<deg>"
 
 
 def describe_dmri_directions(img):

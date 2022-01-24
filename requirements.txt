@@ -1,5 +1,4 @@
 black
-chevron
 jupyterlab
 nb_black
 pre-commit
@@ -7,3 +6,8 @@ pybids==0.14.0
 pytest
 rich
 ruamel.yaml
+# install chevron from the submodule
+# needed to use the "keep" option
+# only until a new version is pushed on pypi
+# https://github.com/noahmorrison/chevron/issues/103
+./chevron
