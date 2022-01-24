@@ -272,32 +272,6 @@ def fmap_info(layout, files, config):
     return desc
 
 
-def general_acquisition_info(metadata):
-    """General sentence on data acquisition.
-
-    This should be the first sentence in the MRI data acquisition section.
-
-    Parameters
-    ----------
-    metadata : :obj:`dict`
-        The metadata for the dataset.
-
-    Returns
-    -------
-    out_str : :obj:`str`
-        Output string with scanner information.
-    """
-    out_str = (
-        "MR data were acquired using a {tesla}-Tesla {manu} {model} MRI "
-        "scanner.".format(
-            tesla=metadata.get("MagneticFieldStrength", "UNKNOWN"),
-            manu=metadata.get("Manufacturer", "MANUFACTURER"),
-            model=metadata.get("ManufacturersModelName", "MODEL"),
-        )
-    )
-    return out_str
-
-
 def final_paragraph(metadata):
     """Describe dicom-to-nifti conversion process and methods generation.
 

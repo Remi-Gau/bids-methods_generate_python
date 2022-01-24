@@ -63,10 +63,7 @@ def describe_duration(files) -> str:
         n_vols = n_vols[0]
         dur_str = describe_func_duration(n_vols, tr)
 
-    dur_str = (
-        "Run duration was {0} minutes, during which {1} volumes were acquired."
-    ).format(dur_str, n_vols)
-    return dur_str
+    return dur_str, n_vols
 
 
 def describe_multiband_factor(metadata) -> str:
